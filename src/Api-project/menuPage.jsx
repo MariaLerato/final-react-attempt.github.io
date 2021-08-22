@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import News from './newsfeed';
-import Data from './data';
 import UserDetails from './userDetails';
 import New from './new';
 import HomePageRouter from './news';
