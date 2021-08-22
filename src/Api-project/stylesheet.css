@@ -1,0 +1,138 @@
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	/* display: block; */
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
+.news-container-card{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding:3%;
+    /* background-color:#57686a; */
+}
+.news-container-card li{
+    list-style-type: none;
+}
+.container{
+    padding:2%;
+    padding-bottom: 3%;
+    /* background-color:#57686a; */
+    width: 200%;
+  
+}
+.container h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+.card{
+    margin-bottom: 3%;
+    padding-right: 1px;
+    /* background-color:#57686a; */
+    padding-top: 1%;
+    
+}
+.output-container-mapping{
+    display:flex;
+    width:100%;
+}
+.first-output{
+    width:70%;
+}
+.first-output a{
+    text-decoration: none;
+    color:black;
+}
+.second-output{
+    margin-top: 2%;
+}
+.users-container{
+    padding:2%;
+    background-color: aliceblue;
+    /* height: 100vh; */
+    width:97%;
+    margin-left: 2%;
+}
+.card-output{
+    width:40%;
+}
+.nav{
+    background-color: rgb(132, 134, 136);
+   width:97%;
+   margin-left:2% ;
+   margin-top: 1%;
+}
+.nav ul{
+    width:100%;
+    padding:3%;
+    text-align: right;
+    margin-top: 1%;
+   
+}
+.nav ul li{
+    list-style-type: none;
+    display:inline;
+    padding:2%;
+    text-align: right;
+   
+}
+
+.users-container h1{
+    font-family: cursive ,'sans-serif';
+    font-size: 55px;
+    text-align: right;
+
+}
+form{
+    margin:auto;
+    padding:auto;
+    width:70%;
+    
+}
+.input-group-text{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-variant: inherit;
+    color:rgb(77, 83, 85);
+}
+.nav a{
+    color:white;
+    text-decoration: none;
+    font-size: larger;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+
+}
