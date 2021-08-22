@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MenuPage from './Api-project/menuPage';
-import Landing from './Api-project/try';
-import NewsYork from './Api-project/newsNewYork';
-import UserDetails from './Api-project/userDetails';
-import PropsMenu from './Api-project/propsMenu';
-import Functions from './Api-project/functions';
-import New from './Api-project/new';
 import { HashRouter } from 'react-router-dom';
 
 
