@@ -20,8 +20,8 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -b gh-deploy -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
