@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MenuPage from './Api-project/menuPage';
 import { HashRouter } from 'react-router-dom';
-
-
+import MenuPage from './components/menuPage';
+import UserDetails from './components/userDetails';
+import Details from './components/params';
 
 ReactDOM.render(
-  <HashRouter>
+    <HashRouter>
     <MenuPage/>
   </HashRouter>,
   document.getElementById('root')

@@ -1,0 +1,33 @@
+.showcase {
+    background-image: url('pexels-şahin-sezer-dinçer-3953481.jpg');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    height: 350px;
+    background-size: cover;
+    margin-top: 2%;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    height:350px ;
+    color: white;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    justify-content: center;
+}
+.para{
+    padding:3% 10% 20% 2%;
+    
+}
+.para h2{
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+body{
+    background-color: #eee;
+}
+.overlay h1{
+    padding-top: 10%;
+}
