@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+ import React,{useState,useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './stylesheet.css'
 import { useParams } from "react-router-dom";
@@ -64,7 +64,9 @@ const UserDetails = ({props}) => {
     
         }
            
-    
+    // dis is de page i dd ye ne ker e bontxha all the users on de same page instead of taking only one user 
+    //so this page ae sa bereka
+    // yah ke e ntxhitxe go link to and linked the Add page instead
     const deleteuser = (e) => {
         let uid = e.target.id
         if(window.confirm("Are You Sure You Want To Delete?")){

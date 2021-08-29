@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import MenuPage from './components/menuPage';
 import UserDetails from './components/userDetails';
 import Details from './components/params';
+import NewsPart from './components/newpage';
+import NewsMenu from './components/newnewsmenu';
+import Landing from './news/landing';
 
 ReactDOM.render(
     <HashRouter>

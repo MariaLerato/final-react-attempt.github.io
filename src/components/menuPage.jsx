@@ -1,12 +1,10 @@
-import React, { Fragment, useState ,useEffect} from 'react'
+import React, {  useState } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import UserDetails from './userDetails';
 import Form from './form';
-import NewsMenu from './newnewsmenu';
 import Menu from './class';
-import Details from './params';
 import UserDets from './Add';
+import Edit from './edit';
 
 const MenuPage = ({}) => {
     
@@ -26,24 +24,20 @@ const MenuPage = ({}) => {
                         < Menu/>
                     </Route>
                    
-                    <Route path={'/params/:id'}>
-                              <Details d={users} users={users} setUser={setUsers}/>
+                    <Route path={'/edit/:id'}>
+                              <Edit />
+                              {/* details e kae */}
+                              {/* never mind dis one gape ke dirile a million pages befor ke dira the one ya add */}
                         
                     </Route>
-                    <Route path={'/userDetails/:id'}>
-                        {users.map((props) => (
-                            <Fragment>
-                                <UserDetails props={props} users={users} setUser={setUsers}/>
-                            </Fragment>
-                        ))}
-
-                    </Route>
+                 {/* i clled it here so, without the arrays or the props or mapping */}
                     <Route path={'/Add/:id'}>
-                        <UserDets users={users} />
+                        <UserDets />
                     </Route>
                    
                     <Route path={'/'}>
                         <Form users={users} setUsers={setUsers}/>
+                        {/* this one yona k */}
                     </Route>
                    
                 </Switch>

@@ -10,7 +10,6 @@ const NewsPart = ({articles,setArticles}) =>{
     useEffect(()=>{
         const fetchArticles = async () =>{
         try{
-           
                 const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=hgGZ9Qf26H4JZSuum97ZdjfSvdrM1GG0 `
                 )
                 const articles = await res.json()
@@ -37,7 +36,7 @@ const NewsPart = ({articles,setArticles}) =>{
             <h2>Loading....</h2>
         ):(
             <section className="para grid grid-cols-1 gap-10 px-5">
-            {articles.map((article)=>{
+            {articles.map((article,id)=>{
                 const {abstract,headline:{main},byline:{original},
             lead_paragraph,news_desk,section_name,_id,word_count} = article
                 return(
