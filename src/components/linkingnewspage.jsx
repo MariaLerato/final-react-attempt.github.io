@@ -2,8 +2,9 @@ import React,{useState,useEffect} from 'react'
 import './deco.css'
 import { Link } from 'react-router-dom'
 import SearchForm from './pagesite'
+import Thought from './newthought'
 
-const NewsPart = ({articles,setArticles}) =>{
+const NewsLinking = ({articles,setArticles}) =>{
     const [term,setTerm] =useState('everything')
     const [isLoading,setIsLoading] = useState(true)
     useEffect(()=>{
@@ -22,6 +23,8 @@ const NewsPart = ({articles,setArticles}) =>{
         }
         fetchArticles()
     },[term])
+    // const {abstract,headline:{main},byline:{original},
+    // lead_paragraph,news_desk,section_name,_id,word_count} = articles
     return(
         <>
       
@@ -35,35 +38,21 @@ const NewsPart = ({articles,setArticles}) =>{
             <h2>Loading....</h2>
         ):(
             <section className="para grid grid-cols-1 gap-10 px-5">
-            {articles.map((article,id)=>{
-                const {abstract,headline:{main},byline:{original},
-            lead_paragraph,news_desk,section_name,_id,word_count} = article
-                return(
-                    <article key={_id} className="bg-white py-10 px-5 rounded-lg">
-              <Link to={'/linkingnewspage/'+ article._id}> <h2 className="lg:text-4xl"> {main}</h2> </Link>
-                     <p>{abstract}</p>
-                        <p>{lead_paragraph}</p>
-                    <ul className="my-4">
-                        <li>
-                            {original}
-                        </li>
-                        <li>
-                       <span className="font-bold">News Desk:</span>   {news_desk}
-                        </li>
-                        <li>
-                        <span className="font-bold"> Section Name:</span>      {section_name}
-                        </li>
-                        <li>
-                        <span className="font-bold">Word Count</span>       {word_count}
-                        </li>
-                    </ul>
+            {/* {articles.map((article,id)=>{ */}
+           
+                {/* return( */}
+                    <article  className="bg-white py-10 px-5 rounded-lg">
+                        {/* <Link to={"//"}>{main}</Link> */}
+                       {articles.abstract}
+                       {articles.main}
+                        {/* <Thought main={main} abstract={abstract} /> */}
                     </article>
                 )
-})} 
+{/* })}  */}
         </section>
         )}
         
         </>
     )
 }
-export default NewsPart
+export default NewsLinking

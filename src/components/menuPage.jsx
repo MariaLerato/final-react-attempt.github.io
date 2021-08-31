@@ -5,6 +5,7 @@ import Form from './form';
 import Menu from './class';
 import UserDets from './Add';
 import Edit from './edit';
+import NewsLink from './linkingnewspage';
 
 const MenuPage = ({}) => {
     
@@ -30,6 +31,7 @@ const MenuPage = ({}) => {
                               {/* never mind dis one gape ke dirile a million pages befor ke dira the one ya add */}
                         
                     </Route>
+                   
                  {/* i clled it here so, without the arrays or the props or mapping */}
                     <Route path={'/Add/:id'}>
                         <UserDets />

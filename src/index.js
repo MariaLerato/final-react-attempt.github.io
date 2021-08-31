@@ -10,10 +10,12 @@ import Details from './components/params';
 import NewsPart from './components/newpage';
 import NewsMenu from './components/newnewsmenu';
 import Landing from './news/landing';
+import NewsClass from './news/newsclass';
+import New from './new/class';
 
 ReactDOM.render(
     <HashRouter>
-    <MenuPage/>
+    <NewsMenu/>
   </HashRouter>,
   document.getElementById('root')
 );

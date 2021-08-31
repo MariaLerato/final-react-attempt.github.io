@@ -1,33 +1,28 @@
-import React,{useState} from 'react'
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
+const NewsArticles = ({data,setData}) => {
+    // const [data, setData] = useState([])
 
-const NewsIndex = ({story,setStory}) =>{
-    const [data,setData] = useState([])
-    const [term,setTerm] = useState('everything')
-    useEffect(()=>{
-        const fetchStory = async => {
-        try{
-                 fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=hgGZ9Qf26H4JZSuum97ZdjfSvdrM1GG0 `)
-                .then((res)=>{ return res.json()})  
-                console.log(story)
-                setStory(story.response.docs)
-                
-        }
-        catch (err){
-            console.log(err)
-        }
-      
-        }
-        fetchStory()
-    },[])
-    
-    return(
+    useEffect(() => {
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ca8fca1e1bf243638dcfd1a05102b0fa`)
+            .then((res) => { return res.json() })
+            .then((_data) => { setData(_data) })
+            .catch((err) => { console.log(err) })
+            .finally(() => { console.log('done') })
+    })
+    return (
         <>
-        {story.abstract}
-        <h1>Maria</h1>
+            <div className="list-group">
+
+                
+            <h1>Maria</h1>
+                {data.map((action) => <li>{action.articles}</li>
+
+                )}
+            </div>
         </>
     )
 }
-export default NewsIndex
+export default NewsArticles
