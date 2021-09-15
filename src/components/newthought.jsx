@@ -13,7 +13,7 @@ const Thought =() =>{
                 )
                 const articles = await res.json()
                 console.log(articles)
-                setArticles(articles.response.docs)
+                setArticles(articles.response.docs.abstract)
                 setIsLoading(false)
             }
             catch (err) {
@@ -25,18 +25,7 @@ const Thought =() =>{
 
     return(
         <>
-        {isLoading?(
-            <h2>Loading</h2>
-        ):(
-            <section>
-                  {articles.map((article)=>{
-               const {abstract,headline:{main}} = article
-               return(
-                   {abstract}
-               )
-       })}
-            </section>
-        )}
+        
      
         
         </>

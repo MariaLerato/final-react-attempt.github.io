@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import firebase from "firebase";
 import 'bootstrap/dist/css/bootstrap.min.css'
 const Edit = () => {
+
     const [name, setName] = useState(' ')
-    // const [surname,setSurname] = useState(' ')
     const [age, setAge] = useState(' ')
     const [location, setLocation] = useState(' ')
     const [des, setDes] = useState(' ')
@@ -16,9 +16,8 @@ const Edit = () => {
         e.preventDefault()
         setName(e.target.value)
     }
-    // ke dis page
+
     const getAge = (e) => {
-        setAge.bind(getAge)
         e.preventDefault()
         setAge(e.target.value)
     }
@@ -39,24 +38,11 @@ const Edit = () => {
         setData(userInformation)
         console.log('lists', db.collection('lists'))
     }, [])
-    //run it then how did u do it
-    //de problem was i cldnt pass the id properly
-    const createUsers = (e) => {
-        e.preventDefault();
-        db.collection('lists').add({
-            name: name,
-            age: age,
-            des: des,
-            location: location
-        })
-            .then((res) => { console.log('user added') })
-            .catch((err) => { console.log(err) })
-
-    }
+   
     const updateUser = (e) => {
         e.preventDefault()
         let uid = e.target.id
-        db.collection('lists').doc(id).update({
+        db.collection('lists').doc(uid).update({
             name: name,
             age: age,
             location: location,
@@ -67,35 +53,35 @@ const Edit = () => {
     }
     return (
         <>
-            <div class="input-group input-group-sm mt-4 mb-6">
-                <form onSubmit={createUsers}>
-                    <div class="mb-3 row">
-                        <label for="name" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
+            <div className="input-group input-group-sm mt-4 mb-6">
+                <form onSubmit ={updateUser}>
+                    <div className="mb-3 row">
+                        <label for="name" className="col-sm-2 col-form-label">Name</label>
+                        <div className="col-sm-10">
                             <input type="text" className="form-control" onChange={getName} defaultValue={data.name} />
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="name" class="col-sm-2 col-form-label">Age</label>
-                        <div class="col-sm-10">
+                    <div className="mb-3 row">
+                        <label for="name" className="col-sm-2 col-form-label">Age</label>
+                        <div className="col-sm-10">
                             <input type="text" className="form-control" onChange={getAge} defaultValue={data.age} />
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="name" class="col-sm-2 col-form-label">Location</label>
-                        <div class="col-sm-10">
+                    <div className="mb-3 row">
+                        <label for="name" className="col-sm-2 col-form-label">Location</label>
+                        <div className="col-sm-10">
                             <input type="text" className="form-control" onChange={getLocation} defaultValue={data.location} />
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="des" class="col-sm-2 col-form-label">Description</label>
-                        <div class="col-sm-10">
+                    <div className="mb-3 row">
+                        <label for="des" className="col-sm-2 col-form-label">Description</label>
+                        <div className="col-sm-10">
                             <input type="text" className="form-control" onChange={getDes} defaultValue={data.des} />
                         </div>
                     </div>
                    
                     <br />
-                    <Link to={"/Add/" + id} className='btn btn-warning' onClick={updateUser}>Update User</Link>
+                    <Link to={"/Add/" + id} className='btn btn-warning' id={id} onClick={updateUser}>Update User</Link>
                
             </form>
             </div>

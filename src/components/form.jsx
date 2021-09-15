@@ -59,8 +59,7 @@ const Form = ({ users, setUsers }) => {
     // delete user
     const deleteuser = (e) => {
         let uid = e.target.id
-        // if (window.confirm("Are You Sure You Want To Delete?")) {
-            db.collection('lists').doc(id).delete()
+            db.collection('lists').doc(uid).delete()
                 .then(() => { console.log('user deleted') })
     }
 
@@ -71,7 +70,7 @@ const Form = ({ users, setUsers }) => {
                 <div className="section group">
                     <div className="col span_1_of_2">
                     </div>
-                    <div class="col span_1_of_2">
+                    <div className="col span_1_of_2">
                     </div>
                 </div>
                 <form onSubmit={createUsers}>
@@ -100,10 +99,11 @@ const Form = ({ users, setUsers }) => {
                                     <ol className="list-group list-group-mt-4">
                                         <li className="list-group-item d-flex justify-content-between align-items-start py-2 px-3">
                                             <div className="ms-2 me-auto">
-                                                <Link to={"/Add/" + action.id } ><div className="fw-bold">{action.name}</div></Link>
+                                                <Link to={"/edit/" + action.id } ><div className="fw-bold">{action.name}</div></Link>
                                                 <p className="card-text">{'Age : '}{action.age}</p>
                                             </div>
-                                            <button className="badge bg-danger rounded-pill" onClick={deleteuser}><i className="bi bi-trash bi-2x"></i></button>
+                                            <button className="delete" id= {action.id} onClick={deleteuser}>x</button>
+                                            {/* <button className="badge bg-danger rounded-pill" id={action.id} onClick={deleteuser}><i className="bi bi-trash bi-2x"></i></button> */}
                                         </li>
                                     </ol>       
                                 </div>

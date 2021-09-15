@@ -15,7 +15,7 @@ import New from './new/class';
 
 ReactDOM.render(
     <HashRouter>
-    <NewsMenu/>
+    <MenuPage/>
   </HashRouter>,
   document.getElementById('root')
 );

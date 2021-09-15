@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import './deco.css'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import SearchForm from './pagesite'
-import Thought from './newthought'
 
 const NewsLinking = ({articles,setArticles}) =>{
     const [term,setTerm] =useState('everything')
     const [isLoading,setIsLoading] = useState(true)
+
+    const {id : id} = useParams()
     useEffect(()=>{
         const fetchArticles = async () =>{
         try{
@@ -21,37 +22,31 @@ const NewsLinking = ({articles,setArticles}) =>{
                 console.log(err)
             }
         }
-        fetchArticles()
+        fetchArticles(id)
     },[term])
     // const {abstract,headline:{main},byline:{original},
     // lead_paragraph,news_desk,section_name,_id,word_count} = articles
     return(
         <>
-      
         <div className="showcase">
-            <div className="overlay px-5">
-                <h1 className=" text-4xl capitalize font-bold text-white text-center mb-4 lg:text-6xl">Viewing Articles about {term}</h1>
-                <SearchForm  searchText={(text) =>setTerm(text)}/>
-            </div>
+            <div className="overlay px-4">
+                <h1 className=" text-4xl capitalize font-bold text-white text-center mb-4 lg:text-6xl">News Page</h1>
+             </div> 
+             
+             {
+              articles.map(action =>{
+
+                const {abstract,headline:{main},byline:{original}} = action
+                    return(
+                        <article key={id} style={{padding: 2}}>
+                            {main}
+                            {abstract}
+                            byline:{original}
+                        </article>
+                    )
+              })   
+             }
         </div>
-        {isLoading ? (
-            <h2>Loading....</h2>
-        ):(
-            <section className="para grid grid-cols-1 gap-10 px-5">
-            {/* {articles.map((article,id)=>{ */}
-           
-                {/* return( */}
-                    <article  className="bg-white py-10 px-5 rounded-lg">
-                        {/* <Link to={"//"}>{main}</Link> */}
-                       {articles.abstract}
-                       {articles.main}
-                        {/* <Thought main={main} abstract={abstract} /> */}
-                    </article>
-                )
-{/* })}  */}
-        </section>
-        )}
-        
         </>
     )
 }

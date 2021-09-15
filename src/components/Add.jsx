@@ -33,19 +33,19 @@ const UserDets = () => {
                     <fieldset >
                         <div className="form-group">
                             <label >Name</label>
-                            <input type="text" name="name" disabled="true" className="form-control" value={data.name} onChange={((e)=>setName(e.target.value))}></input> 
+                            <input type="text" name="name" disabled={true} className="form-control" value={data.name} onChange={((e)=>setName(e.target.value))}></input> 
                         </div>
                         <div className="form-group">
                             <label>Age</label>
-                            <input type="text" name="age" disabled="true" className="form-control" value={data.age} onChange={((e)=>setAge(e.target.value))}/>
+                            <input type="text" name="age" disabled={true} className="form-control" value={data.age} onChange={((e)=>setAge(e.target.value))}/>
                         </div>
                         <div className="form-group">
                             <label >Location</label>
-                            <input type="text"  className="form-control" disabled="true" name="location" value={data.location} onChange={((e)=>setLocation(e.target.value))}/>
+                            <input type="text"  className="form-control" disabled={true} name="location" value={data.location} onChange={((e)=>setLocation(e.target.value))}/>
                         </div>
                         <div className="form-group">
                             <label for="disabledTextInput">Description</label>
-                            <input type="text" className="form-control" name="des" disabled="true" value={data.des} onChange={((e)=>setDes(e.target.value))}/>
+                            <input type="text" className="form-control" name="des" disabled={true} value={data.des} onChange={((e)=>setDes(e.target.value))}/>
                         </div>
                         {/* <button  className='btn btn-danger me-2' onClick={deleteuser}>Delete User</button> */}
                         <br />
